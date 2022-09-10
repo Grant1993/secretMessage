@@ -21,5 +21,8 @@ document.querySelector('form').addEventListener('submit', event => {
   const linkInput = document.querySelector('#link-input')
   linkInput.value = `${window.location}#${encrypted}`;
   linkInput.select();
+  linkInput.setSelectionRange(0, 99999);
+
+  navigator.clipboard.writeText(linkInput.value);
 
 })
